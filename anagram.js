@@ -1,8 +1,6 @@
-﻿//ANAGRAM EXAMPLE1 repeating same code
+﻿//ANAGRAM EXAMPLE1 repeating code
 
-/*
 function findAnagrams(word1, word2) {
-
   let wordA = word1.length;
   let wordB = word2.length;
 
@@ -11,18 +9,17 @@ function findAnagrams(word1, word2) {
     return false;
   }
 
-    /* sort the both strings ===
+  /* sort the both strings ===
     to lowercase() converts strings to lowcase letters,
     split() converts the strings into an array
     sort() orders the array
     join() converts that array to ordered string 
     */
 
-/*
   const sortedA = word1.toLowerCase().split('').sort().join('');
   const sortedB = word2.toLowerCase().split('').sort().join('');
 
-  // compare the sorted strings again to see if they really are anagrams 
+  // compare the sorted strings again to see if they really are anagrams
 
   if (sortedA === sortedB) {
     console.log('True');
@@ -32,10 +29,6 @@ function findAnagrams(word1, word2) {
 }
 
 findAnagrams('listen', 'listen');
-
-*/
-
-/*
 
 //ANAGRAM EXAMPLE 2 using array methods
 
@@ -54,9 +47,7 @@ function checkAnagrams(str1, str2) {
 console.log(checkAnagrams('listen', 'lsiten'));
 console.log(checkAnagrams('plaaa', 'plöö'));
 
-
-*/
-//Anagramexample3 using loops
+//ANAGRAM EXAPLE 3 using loops
 
 //function takes two strings
 function getAnagrams(str1, str2) {
