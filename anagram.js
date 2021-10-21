@@ -28,7 +28,7 @@ function findAnagrams(word1, word2) {
   }
 }
 
-findAnagrams('listen', 'listen');
+findAnagrams('listen', 'listen'); //true
 
 //ANAGRAM EXAMPLE 2 using array methods
 
@@ -44,14 +44,14 @@ function checkAnagrams(str1, str2) {
   return orderString(str1) === orderString(str2);
 }
 
-console.log(checkAnagrams('listen', 'lsiten'));
-console.log(checkAnagrams('plaaa', 'plöö'));
+console.log(checkAnagrams('listen', 'lsiten')); //false
+console.log(checkAnagrams('plaaa', 'plöö')); // false
 
-//ANAGRAM EXAPLE 3 using loops
+//ANAGRAM EXAPLE 3 using loops & object
 
 //function takes two strings
 function getAnagrams(str1, str2) {
-  // convert both strings to character maps. it uses the buildCharMap below on both strings
+  // convert both strings to character maps. we'll use buildCharMap function below on both strings
   const charMap1 = buildCharMap(str1);
   const charMap2 = buildCharMap(str2);
 
@@ -60,8 +60,7 @@ function getAnagrams(str1, str2) {
     return false;
   }
 
-  // loop through and compare both character maps. if the number of characters is not equal in both
-  // maps, they are not anagrams
+  // loop through each character and compare both character maps. If they're not equal, function returns falase.
   for (let char in charMap1) {
     if (charMap1[char] !== charMap2[char]) {
       return false;
@@ -72,14 +71,15 @@ function getAnagrams(str1, str2) {
 }
 
 // function that converts the string to an object and counts the times a certain letter
-// is found in the string. Characters are
+// is found in the string.
 function buildCharMap(str) {
+  //empty object
   const charMap = {};
   let checkString = str.replace(/[^\w]/g, '').toLowerCase();
 
-  // for of -loop iterates the strings and characters one by one.
-  // it adds one if map already has this character. Otherwise (||) it assigns value 1 if the character does not yet exist
-  // in the charMap
+  /* for of -loop iterates the characters one by one.
+  it adds one if map already has this character. Otherwise (||) it _assigns value_ 1 if the character does not yet exist
+  in the charMap */
   for (let char of checkString) {
     charMap[char] = charMap[char] + 1 || 1;
   }
@@ -87,4 +87,4 @@ function buildCharMap(str) {
   return charMap;
 }
 
-console.log(getAnagrams(' Eleven plus two ', ' Twelve plus one'));
+console.log(getAnagrams(' Eleven plus two ', ' Twelve plus one')); //true
